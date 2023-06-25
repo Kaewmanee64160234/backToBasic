@@ -1,4 +1,6 @@
 var createError = require('http-errors');
+var serverless = require('serverless-http');
+
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -9,8 +11,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-var debug = require('debug')('backtobasic:server');
-var http = require('http');
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -46,4 +47,5 @@ app.use(function(err, req, res, next) {
 });
 // const PORT = process.env.PORT || 5000
 // app.listen(PORT, () => console.log(`Now Listening on port ${PORT}`))
-module.exports = app;
+module.exports = serverless(app);
+// module.exports.handler = serverless(app);
