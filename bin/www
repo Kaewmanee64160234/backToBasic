@@ -12,7 +12,7 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || 'https://fanciful-hummingbird-45a6fe.netlify.app');
+var port = process.env.PORT || 'https://fanciful-hummingbird-45a6fe.netlify.app';
 // app.set('port', port);
 
 /**
